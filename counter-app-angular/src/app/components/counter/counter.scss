@@ -1,0 +1,90 @@
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 100%;
+}
+
+.counter {
+  background-color: white;
+  text-align: center;
+  padding: 60px;
+  max-width: 800px;
+  border-radius: 20px;
+  border: 3px solid rgb(85, 85, 85);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.count-display {
+  font-size: 45px;
+  margin-bottom: 40px;
+  color: #3a3a3a;
+}
+
+.count-display span {
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.btn {
+  padding: 24px 40px;
+  font-size: 36px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  border: 2px solid rgb(85, 85, 85);
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.increment {
+  background: linear-gradient(to bottom, #34d058, #28a745);
+}
+
+.increment:hover {
+  background: linear-gradient(to bottom, #2ebd4f, #218838);
+}
+
+.decrement {
+  background: linear-gradient(to bottom, #ff6b6b, #dc3545);
+}
+
+.decrement:hover {
+  background: linear-gradient(to bottom, #e65a5a, #c82333);
+}
+
+button.reset {
+  margin-top: 30px;
+  color: rgb(74, 74, 74);
+  border: 3px solid rgb(85, 85, 85);
+}
+
+.count-display .positive {
+  color: #28a745;
+}
+
+.count-display .negative {
+  color: #dc3545;
+}
+
+.count-display .neutral {
+  color: #0078d4;
+}
+
+.angular-icon {
+  color: #dd0031;
+  margin-right: 10px;
+  font-size: 100px;
+  vertical-align: middle;
+}

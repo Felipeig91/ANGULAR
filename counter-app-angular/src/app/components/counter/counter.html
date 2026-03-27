@@ -1,0 +1,21 @@
+<div class="counter-container">
+  <button class="btn decrement" (click)="decrement()">-</button>
+
+  <div class="counter">
+    <h2><fa-icon [icon]="faAngular" class="angular-icon"></fa-icon> Angular Counter</h2>
+
+    <p class="count-display">
+      Current Count: @if( count > 0) {
+      <span class="positive">{{ count }}</span>
+      } @else if ( count < 0) {
+      <span class="negative"> {{ count }}</span>
+      } @else {
+      <span class="neutral">{{ count }}</span>
+      }
+    </p>
+
+    <button class="btn reset" (click)="reset()">Reset</button>
+  </div>
+
+  <button class="btn increment" (click)="increment()">+</button>
+</div>

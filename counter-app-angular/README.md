@@ -54,6 +54,22 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Architecture & Why this setup
+
+Este proyecto usa componentes standalone para simplificar la estructura y evitar un módulo central (`AppModule`).
+
+- `src/app/app.ts`:
+  - `standalone: true`: el componente raíz se puede bootstrappear directamente con `bootstrapApplication`.
+  - `imports: [Counter]`: incluye subcomponentes necesarios sin módulo adicional.
+
+- `src/app/components/counter/counter.ts`:
+  - `standalone: true`: acopla su propia dependencia con `imports`.
+  - `CommonModule`: habilita directivas estándar (`ngIf`, `ngFor`, etc.).
+  - `FontAwesomeModule`: íconos de FontAwesome.
+  - `CounterService`: se inyecta para la lógica de contado.
+
+Este enfoque es especialmente útil para aplicaciones pequeñas/medianas, mejora la claridad y reduce burócracia de módulos.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

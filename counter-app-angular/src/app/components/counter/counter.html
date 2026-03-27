@@ -1,21 +1,38 @@
+<!--
+  Componente Counter: UI principal del contador.
+  - Separa la lógica (CounterService) de presentación (template).
+  - Usa bindings para interactuar con los métodos del componente (`increment`, `decrement`, `reset`).
+  - Muestra el valor en `count`, y aplica clases condicionales para estilo visual.
+  - Incluye icono FontAwesome de Angular usando el componente <fa-icon>.
+  - El `@if` es sintaxis de template sugar Angular (para condiciones) => la plantilla muestra el estilo correcto de valor.
+-->
 <div class="counter-container">
+  <!-- Botón para disminuir el contador -->
   <button class="btn decrement" (click)="decrement()">-</button>
 
   <div class="counter">
-    <h2><fa-icon [icon]="faAngular" class="angular-icon"></fa-icon> Angular Counter</h2>
+    <!-- Encabezado con icono: fácil identificación visual del componente. -->
+    <h2>
+      <fa-icon [icon]="faAngular" class="angular-icon"></fa-icon>
+      Angular Counter
+    </h2>
 
+    <!-- Muestra el valor actual y cambia la apariencia según signo. -->
     <p class="count-display">
-      Current Count: @if( count > 0) {
-      <span class="positive">{{ count }}</span>
-      } @else if ( count < 0) {
-      <span class="negative"> {{ count }}</span>
+      Current Count:
+      @if (count > 0) {
+        <span class="positive">{{ count }}</span>
+      } @else if (count < 0) {
+        <span class="negative">{{ count }}</span>
       } @else {
-      <span class="neutral">{{ count }}</span>
+        <span class="neutral">{{ count }}</span>
       }
     </p>
 
+    <!-- Botón para reiniciar el contador a cero. -->
     <button class="btn reset" (click)="reset()">Reset</button>
   </div>
 
+  <!-- Botón para incrementar el contador -->
   <button class="btn increment" (click)="increment()">+</button>
 </div>

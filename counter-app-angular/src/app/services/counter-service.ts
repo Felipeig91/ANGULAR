@@ -11,20 +11,29 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CounterService {
+  // Valor actual del contador, mantenido en estado privado.
   private count = 0;
 
+  // Devuelve el valor actual del contador.
+  // - Se llama desde componentes para obtener la vista actual del valor.
   getCount(): number {
     return this.count;
   }
 
+  // Incrementa el contador en 1.
+  // - Lógica de negocio centralizada aquí para desacoplar la vista.
   increment(): void {
     this.count++;
   }
 
+  // Decrementa el contador en 1.
+  // - Se usa al presionar el botón "-" en el componente.
   decrement(): void {
     this.count--;
   }
 
+  // Restaura el contador a 0.
+  // - Mantiene consistencia y simplifica la operación de reset.
   reset(): void {
     this.count = 0;
   }
